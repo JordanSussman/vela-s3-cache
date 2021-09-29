@@ -7,6 +7,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"os"
 	"path/filepath"
 
 	"github.com/sirupsen/logrus"
@@ -43,6 +44,7 @@ func (p *Plugin) Exec() (err error) {
 	if err != nil {
 		return err
 	}
+	mc.TraceOn(os.Stdout)
 
 	logrus.Info("s3 client created")
 
